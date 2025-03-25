@@ -19,7 +19,8 @@ echo ""
 echo "Piping Commands Manager"
 echo "1. List contents of the current directory"
 echo "2. Filter and sort directory contents"
-echo "3. Exit"
+echo "3. find number of files and directories"
+echo "4. Exit"
 # Loop until the user chooses to exit
 while true; do
 read -p "Select an option (1-3): " option
@@ -30,7 +31,11 @@ list_directory_contents
 2) # Filter and sort directory contents
 filter_and_sort_contents
 ;;
-3) # Exit the script
+3) #count number of files and directories
+find . -type f | wc -l
+find . -type d | wc -l
+;;
+4) # Exit the script
 echo "Exiting the Piping Commands Manager. Goodbye!"
 exit 0
 ;;
